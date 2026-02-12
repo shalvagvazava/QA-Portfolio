@@ -6,9 +6,8 @@ Featured artifacts: Test Plan, Test Cases, Bug Reports, API Collection, Automati
 **Tools:** Postman • Selenium • Git • Jenkins • MySQL (update as needed)
 
 ## Quick Links
-- **LinkedIn:** https://www.linkedin.com/in/shalvagvazava-1a1590285/
-- **Email:** gvazava.shalva5@gmail.com
-- **Main GitHub profile:** https://github.com/shalvagvazava
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/shalvagvazava-1a1590285/)
+[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:gvazava.shalva5@gmail.com)
 
 ---
 
