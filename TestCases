@@ -1,0 +1,162 @@
+# Test Cases — List Page Search
+
+**Project:** QA Portfolio (Demo)  
+**Module:** [Replace: e.g., Employees / Users / Products] — Search  
+**Author:** Shalva Gvazava  
+**Version:** 1.0  
+**Date:** 2026-02-12  
+
+---
+
+## TC-SRCH-001 — Search input UI/UX basics (placeholder, icon, focus state)
+
+- **Severity:** Medium  
+- **Priority:** High  
+- **Status:** Ready  
+- **Type:** UI/UX
+
+### Objective
+Verify that the search input is visible, readable, and has correct interactive states (focus/hover/typing).
+
+### Preconditions
+- User is logged in
+- Target list page is accessible
+
+### Steps
+1. Open the **[List Page]**.
+2. Locate the **Search** input.
+3. Verify placeholder text (spelling, alignment, readability).
+4. Click inside the input and verify focus state (border/shadow/caret).
+5. Type any text (e.g., `qa`) and verify:
+   - text is visible and not clipped
+   - clear (X) button appears (if designed)
+   - search icon placement remains correct
+
+### Expected Result
+- Search input is visible in a consistent location.
+- Placeholder is correct and readable.
+- Focus state is clearly indicated.
+- Typed text is readable; no UI overlaps.
+- Clear action appears if supported.
+
+---
+
+## TC-SRCH-002 — Partial match returns relevant rows
+
+- **Severity:** Medium  
+- **Priority:** High  
+- **Status:** Ready  
+- **Type:** Functional
+
+### Objective
+Verify that entering a partial string filters results to matching rows.
+
+### Test Data
+- Search term: `dev`
+
+### Steps
+1. Open the **[List Page]**.
+2. In the search input, enter `dev`.
+3. Trigger search (press Enter or wait for auto-search).
+4. Review displayed rows.
+
+### Expected Result
+- Only rows containing `dev` in the searchable columns are displayed (based on requirements).
+- No unrelated rows are shown.
+- No UI error is displayed.
+
+---
+
+## TC-SRCH-003 — Case-insensitive search
+
+- **Severity:** Low  
+- **Priority:** Medium  
+- **Status:** Ready  
+- **Type:** Functional
+
+### Test Data
+- `Admin` and `admin` (or any known item)
+
+### Steps
+1. Search using uppercase/lowercase variations.
+2. Compare result sets.
+
+### Expected Result
+- Results are identical if search is case-insensitive (common behavior).
+- If requirements say case-sensitive, results should differ accordingly (documented behavior).
+
+---
+
+## TC-SRCH-004 — No results state
+
+- **Severity:** Medium  
+- **Priority:** Medium  
+- **Status:** Ready  
+- **Type:** Functional/UI
+
+### Test Data
+- Search term: `zz__no_match__zz`
+
+### Steps
+1. Enter `zz__no_match__zz` in the search field.
+2. Trigger search.
+
+### Expected Result
+- Table shows “No results” empty state (or equivalent).
+- No crash, no broken layout.
+- User can easily clear search and recover.
+
+---
+
+## TC-SRCH-005 — Clearing search via X resets to default list
+
+- **Severity:** Low  
+- **Priority:** Medium  
+- **Status:** Ready  
+- **Type:** Functional
+
+### Steps
+1. Enter a valid search term that filters the list.
+2. Click the clear (X) button (if present).
+
+### Expected Result
+- Search input becomes empty.
+- Full default list is restored.
+- Any non-search filters remain unchanged (unless requirements say otherwise).
+
+---
+
+## TC-SRCH-006 — Refresh behavior (define expected)
+
+- **Severity:** Medium  
+- **Priority:** Medium  
+- **Status:** Ready  
+- **Type:** Functional
+
+### Steps
+1. Apply a search filter.
+2. Refresh the page (F5 / browser reload).
+
+### Expected Result (choose based on product requirement)
+- Option A (common): search resets and full list is shown; input is empty  
+- Option B: search persists via URL/query params; input retains value and filtered list remains  
+> Document actual behavior and align with expected requirement.
+
+---
+
+## TC-SRCH-007 — Search combined with another filter
+
+- **Severity:** Medium  
+- **Priority:** High  
+- **Status:** Ready  
+- **Type:** Functional
+
+### Steps
+1. Apply a non-search filter (e.g., Status = Active).
+2. Enter a search term.
+3. Clear search term.
+4. Confirm the non-search filter is still applied.
+
+### Expected Result
+- Search and filters work together correctly.
+- Clearing search does not remove other filters.
