@@ -16,7 +16,7 @@ This repository contains my QA artifacts and examples of how I approach testing:
 
 ### Portfolio Navigation
 - **Test Plans:** `./test-plans/`
-- **Test Cases:** `./test-cases/`
+- **Test Cases:** `./TestCases/`
 - **Test Scenarios:** `./test-scenarios/`
 - **Checklists:** `./checklists/`
 - **Bug Reports:** `./bug-reports/`
