@@ -48,8 +48,8 @@ Add your best 3–6 items here once uploaded:
 
 ### Technical
 - Git (branches, commits)
-- Basic CI/CD awareness (Jenkins/GitLab CI) — learning
-- SQL basics (MySQL): simple SELECTs, joins (edit to match your level)
+- Basic CI/CD awareness (Jenkins/GitLab CI) learning
+- SQL basics (MySQL)
 
 ---
 
@@ -61,11 +61,5 @@ Add your best 3–6 items here once uploaded:
 5. Report bugs with clear reproduction steps
 6. Re-test fixes + run regression
 7. Summarize results
-
----
-
-## Notes
-- All materials here are created for learning and portfolio demonstration.
-- Sensitive data is removed/redacted.
 
 _Last updated: 2026-02-12_
