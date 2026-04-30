@@ -1,8 +1,13 @@
 # QA-Portfolio
 Featured artifacts: Test Plan, Test Cases, Bug Reports, API Collection, Automation samples
 # Shalva Gvazava — QA Portfolio
+Hello my name is Shalva and I am a Quality Assurance Specialist passionate about delivering high quality products through thoughtful testing 🔍
+I specialize in: Automated and Manual testing Web & API testing Writing clear bug reports and test cases Tools like Postman,Selenium,Git and more
+
+🚀 I'm always looking to improve, explore new, and contribute to projects that make a difference. I enjoy making sure that everything works just right. 🛠️ Currently learning more about: CI/CD integration Performance testing Test automation frameworks Thanks for reading! ♥
 
 **Focus:** Manual • API • Web • Automation • Infrastructure Troubleshooting
+
 **Tools:** Postman • Selenium • Git • Jenkins • SQL • Jira • Chrome Devtools
 
 ## Quick Links
