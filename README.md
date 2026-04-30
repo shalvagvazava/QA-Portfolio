@@ -2,8 +2,8 @@
 Featured artifacts: Test Plan, Test Cases, Bug Reports, API Collection, Automation samples
 # Shalva Gvazava — QA Portfolio
 
-**Focus:** Manual • API • Web • Automation (Junior)  
-**Tools:** Postman • Selenium • Git • Jenkins • MySQL (update as needed)
+**Focus:** Manual • API • Web • Automation • Infrastructure Troubleshooting
+**Tools:** Postman • Selenium • Git • Jenkins • SQL • Jira • Chrome Devtools
 
 ## Quick Links
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/shalvagvazava5/)
@@ -12,7 +12,7 @@ Featured artifacts: Test Plan, Test Cases, Bug Reports, API Collection, Automati
 ---
 
 ## What you’ll find in this repository
-This repository contains my QA artifacts and examples of how I approach testing: documenting requirements, designing test coverage, executing tests, reporting issues, and communicating results.
+This repository contains my QA artifacts and examples of how I approach testing: designing test coverage, executing tests, reporting issues, and communicating results.
 
 ### Portfolio Navigation
 - **Test Plans:** `./test-plans/`
@@ -27,24 +27,12 @@ This repository contains my QA artifacts and examples of how I approach testing:
 
 > Tip: Each folder contains a small README explaining what’s inside.
 
----
-
-## Featured Work (start here)
-Add your best 3–6 items here once uploaded:
-- Test Plan: `(link)`
-- Test Cases: `(link)`
-- Bug Report: `(link)`
-- Postman Collection: `(link)`
-- Automation sample: `(link)`
-
----
-
 ## Skills Snapshot
 ### Testing
-- Manual & exploratory testing (web UI)
+- Manual & exploratory testing (web UI), Exploratory testing
 - API testing (Postman): collections, environments, basic assertions
 - Regression testing & smoke testing
-- Writing clear bug reports (steps, actual vs expected, severity/priority)
+- Writing clear bug reports
 
 ### Technical
 - Git (branches, commits)
@@ -53,13 +41,5 @@ Add your best 3–6 items here once uploaded:
 
 ---
 
-## How I work (process)
-1. Understand requirements & risks
-2. Define test coverage (scenarios/checklists)
-3. Create test cases (positive/negative/boundary)
-4. Execute tests and collect evidence
-5. Report bugs with clear reproduction steps
-6. Re-test fixes + run regression
-7. Summarize results
-
-_Last updated: 2026-02-12_
+Lets Connect!
+I'm actively looking for Junior QA tester opportunities where i can contribute to building quality product.
