@@ -28,7 +28,7 @@ This repository contains my QA artifacts and examples of how I approach testing:
 
 ### Manual QA Documentation
 - Test Suite (Auth module): [Test_Suite.md](./Test_Suite.md)
-- Test Cases + Execution results: [Test_Cases1.md](./Test_Cases1.md)
+- Test Cases + Execution results: [Test-cases.md](./Test-cases.md)
 - Smoke Checklist: [Checklist.md](./Checklist.md)
 - Bug Reports: [bug_reports.md](./bug_reports.md)
 
