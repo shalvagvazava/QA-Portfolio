@@ -27,10 +27,10 @@ This repository contains my QA artifacts and examples of how I approach testing:
 ## Portfolio Navigation (AutomationExercise Practice Project)
 
 ### Manual QA Documentation
-- Test Suite (Auth module): [Test_Suite.docx](./Test_Suite.docx)
-- Test Cases + Execution results: [Test_Cases1.docx](./Test_Cases1.docx)
-- Smoke Checklist: [Checklist.docx](./Checklist.docx)
-- Bug Reports: [bug_reports.docx](./bug_reports.docx)
+- Test Suite (Auth module): [Test_Suite.md](./Test_Suite.md)
+- Test Cases + Execution results: [Test_Cases1.md](./Test_Cases1.md)
+- Smoke Checklist: [Checklist.md](./Checklist.md)
+- Bug Reports: [bug_reports.md](./bug_reports.md)
 
 ### API Testing (Postman)
 - Postman Collection: [AutomationExercise API Collection](./AutomationExerciseApi.postman_collection.json)
