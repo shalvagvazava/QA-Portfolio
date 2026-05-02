@@ -10,6 +10,11 @@ I specialize in: Automated and Manual testing Web & API testing Writing clear bu
 
 **Tools:** Postman • Selenium • Git • Jenkins • SQL • Jira • Chrome Devtools
 
+## Featured Project: AutomationExercise.com
+- Scope: Authentication + Registration + basic validation/security checks
+- Deliverables: test suite, executed test cases, bug reports, smoke checklist, Postman API collection
+- Tools: Chrome DevTools, Postman
+
 ## Quick Links
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/shalvagvazava5/)
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:gvazava.shalva5@gmail.com)
@@ -19,18 +24,18 @@ I specialize in: Automated and Manual testing Web & API testing Writing clear bu
 ## What you’ll find in this repository
 This repository contains my QA artifacts and examples of how I approach testing: designing test coverage, executing tests, reporting issues, and communicating results.
 
-### Portfolio Navigation
-- **Test Plans:** `./test-plans/`
-- **Test Cases:** `./TestCases/`
-- **Test Scenarios:** `./test-scenarios/`
-- **Checklists:** `./checklists/`
-- **Bug Reports:** `./bug-reports/`
-- **API Testing (Postman):** `./api-testing/`
-- **Automation:** `./automation/`
-- **Test Reports / Summaries:** `./test-reports/`
-- **Templates:** `./templates/`
+## Portfolio Navigation (AutomationExercise Practice Project)
 
-> Tip: Each folder contains a small README explaining what’s inside.
+### Manual QA Documentation
+- Test Suite (Auth module): [Test_Suite.docx](./Test_Suite.docx)
+- Test Cases + Execution results: [Test_Cases1.docx](./Test_Cases1.docx)
+- Smoke Checklist: [Checklist.docx](./Checklist.docx)
+- Bug Reports: [bug_reports.docx](./bug_reports.docx)
+
+### API Testing (Postman)
+- Postman Collection: [AutomationExercise API Collection](./AutomationExerciseApi.postman_collection.json)
+
+> Note: This portfolio project focuses on Authentication (Signup/Login/Registration/Logout) + smoke coverage + basic API practice endpoints.
 
 ## Skills Snapshot
 ### Testing
