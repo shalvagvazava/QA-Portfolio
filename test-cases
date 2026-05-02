@@ -1,0 +1,955 @@
+Test Suite: Authentication & User Registration 
+
+Target Application: Automation Exercise Module: Signup / Login Test Level: System Testing & UI Validation Execution Type: Manual 
+
+📝 Suite Overview 
+
+This test suite validates the front-end validation, backend data integrity, and error handling of the primary authentication gateway. It includes positive flows, negative boundary tests, and basic security checks. 
+
+ 
+
+🧪 Test Cases TC-AUTH-001 
+
+Module: Signup / Login page 
+
+Technique: UI validation 
+
+Scenario: Signup/Login page opens and contains both forms 
+
+Preconditions: None 
+
+Steps: 
+
+  
+
+Open https://automationexercise.com 
+
+Click Signup / Login in the header 
+
+Expected: 
+
+Page loads successfully 
+
+Login fields to your account is visible 
+
+New User Signup field is visible 
+
+Actual result: Matches expected result 
+
+  
+
+TC-AUTH-002 
+
+Module: Signup (New User Signup) 
+
+Technique: Positive 
+
+Scenario: Initiate registration with valid name and unique email 
+
+Preconditions: Email is not registered 
+
+Test data: Name=Shako, Email=unique email 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Enter name 
+
+Enter unique email 
+
+Click Signup 
+
+Expected: 
+
+User is redirected to Enter Account Information page 
+
+Actual result: Matches expected result 
+
+  
+
+TC-AUTH-003 
+
+Module: Signup (New User Signup) 
+
+Technique: Negative / Validation 
+
+Scenario: Signup attempt with already registered email 
+
+Preconditions: Email is already registered 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Enter name 
+
+Enter already-registered email 
+
+Click Signup 
+
+Expected: 
+
+Registration is blocked 
+
+Message Email Address already exist is shown 
+
+Actual result: 
+
+  
+
+TC-AUTH-004 
+
+Module: Signup (New User Signup) 
+
+Technique: Negative / Required fields 
+
+Scenario: Signup attempt with empty name 
+
+Preconditions: None 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Leave name empty 
+
+Enter a valid email 
+
+Click Signup 
+
+Expected: 
+
+Form is not submitted and required validation is shown 
+
+Actual result: 
+
+A pop up message is shown and says “Please fill out this field” and doesn’t allow to perceed with sign up 
+
+  
+
+TC-AUTH-005 
+
+Module: Signup (New User Signup) 
+
+Technique: Negative / Required fields 
+
+Scenario: Signup attempt with empty email 
+
+Preconditions: None 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Enter a valid name 
+
+Leave email empty 
+
+Click Signup 
+
+Expected: 
+
+Form is not submitted and required validation is shown 
+
+Actual result: 
+
+A pop up message is shown and says “Please fill out this field” and doesn’t allow to perceed with sign up 
+
+  
+
+TC-AUTH-006 
+
+Module: Signup (New User Signup) 
+
+Technique: Negative / Format validation 
+
+Scenario: Signup attempt with invalid email format 
+
+Preconditions: None 
+
+Test data: Name=shako, Email=abc123@abc.abc 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Enter name 
+
+Enter invalid email 
+
+Click Signup 
+
+Expected: 
+
+Form is not submitted OR error is shown for invalid email format 
+
+Actual result: 
+
+The system accepts obviously incorrect/nonexisting email domain text and allows user to perceed with sign up page. 
+
+  
+
+Attachments: 
+
+  
+
+TC-AUTH-007 
+
+Module: Signup (New User Signup) 
+
+Technique: Robustness 
+
+Scenario: Double-click Signup does not create duplicate registration sessions 
+
+Preconditions: Unique email is used 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Enter name and unique email 
+
+Double-click Signup quickly 
+
+Expected: 
+
+Only one navigation/one registration flow starts 
+
+No duplicate accounts are created 
+
+Actual result: 
+
+  
+
+TC-AUTH-008 
+
+Module: Enter Account Information 
+
+Technique: UI / Data continuity 
+
+Scenario: Name and Email are pre-filled from previous step 
+
+Preconditions: User initiated signup successfully 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Initiate signup with name and unique email 
+
+On Enter Account Information page, observe name and email values 
+
+Expected: 
+
+Name and email match previously entered values 
+
+If non-editable, they cannot be changed 
+
+Actual result: 
+
+Name and email match previously entered values 
+
+  
+
+TC-AUTH-009 
+
+Module: Enter Account Information 
+
+Technique: UI validation 
+
+Scenario: Password input is masked 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Click password input 
+
+Type password characters 
+
+Expected: 
+
+Entered password characters are masked (dots) 
+
+Actual result: 
+
+Entered password is masked by dots 
+
+  
+
+Attachments: 
+
+  
+
+TC-AUTH-010 
+
+Module: Enter Account Information 
+
+Technique: UI validation 
+
+Scenario: Title selection works 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Low 
+
+Steps: 
+
+  
+
+Select Mr 
+
+Select Mrs 
+
+Expected: 
+
+Only one title option can be selected at a time 
+
+Actual result: 
+
+Only one title option can be selected at a time 
+
+  
+
+TC-AUTH-011 
+
+Module: Enter Account Information 
+
+Technique: Boundary value analysis 
+
+Scenario: Password too short handling 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Enter a very short password (1 character) 
+
+Fill all other required fields with valid data 
+
+Click Create Account 
+
+Expected: 
+
+If password policy exists: account is not created and validation is shown 
+
+Otherwise: no crash, registration continues 
+
+Actual result: 
+
+System allows to enter a password that consists of 1 character 
+
+  
+
+TC-AUTH-012 
+
+Module: Enter Account Information 
+
+Technique: Boundary value analysis 
+
+Scenario: Password very long handling 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Low 
+
+Steps: 
+
+  
+
+Enter a very long password (e.g., 256 characters) 
+
+Fill other required fields 
+
+Click Create Account 
+
+Expected: 
+
+System handles input without UI break or error exposure 
+
+If limits exist, validation message is shown 
+
+Actual result: 
+
+System doesn’t break or shows any error, allowing to write 256 character password 
+
+  
+
+TC-AUTH-013 
+
+Module: Enter Account Information 
+
+Technique: Validation 
+
+Scenario: Date of birth dropdowns work and accept valid date 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Low 
+
+Steps: 
+
+  
+
+Select a day 
+
+Select a month 
+
+Select a year 
+
+Expected: 
+
+Values can be selected 
+
+Selected values remain selected 
+
+Actual result: 
+
+Values can be selected 2021 and below. All months, all days and all years are selectable 
+
+  
+
+TC-AUTH-014 
+
+Module: Enter Account Information 
+
+Technique: UI 
+
+Scenario: Newsletter checkbox toggles correctly 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Low 
+
+Steps: 
+
+  
+
+Click newsletter checkbox 
+
+Click it again 
+
+Click special offers checkbox 
+
+Click it again 
+
+Expected: 
+
+Checkbox toggles on/off correctly 
+
+Actual result: 
+
+Checkboxes toggle on and off correctly, user can check and uncheck all checkboxes 
+
+  
+
+TC-AUTH-015 
+
+Module: Address Information 
+
+Technique: Required fields 
+
+Scenario: Create account with all required address fields valid 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Fill first name, last name 
+
+Fill address line 1 
+
+Select country 
+
+Fill state, city, zipcode, mobile number 
+
+Click Create Account 
+
+Expected: 
+
+Account is created successfully 
+
+Account created confirmation is shown 
+
+Actual result: 
+
+Account is created successfully and confirmation message is shown. 
+
+  
+
+Attachment: 
+
+  
+
+TC-AUTH-016 
+
+Module: Address Information 
+
+Technique: Negative / Required fields 
+
+Scenario: Create account with empty first name 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Leave first name and last name fields empty 
+
+Fill other required fields valid 
+
+Click Create Account 
+
+Expected: 
+
+Account is not created 
+
+Validation prompts for first name 
+
+Actual result: 
+
+System shows error and requires filling in first name and last name fields 
+
+  
+
+TC-AUTH-017 
+
+Module: Address Information 
+
+Technique: Negative / Required fields 
+
+Scenario: Create account with empty address line 1 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Leave address line 1 empty 
+
+Fill other required fields valid 
+
+Click Create Account 
+
+Expected: 
+
+Account is not created 
+
+Validation prompts for address 
+
+Actual result: 
+
+System doesn’t allow perceeding and requires filling in at least address line 1 
+
+  
+
+TC-AUTH-018 
+
+Module: Address Information 
+
+Technique: Negative / Format validation 
+
+Scenario: Zipcode with letters 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Enter letters in zipcode 
+
+Fill other required fields valid 
+
+Click Create Account 
+
+Expected: 
+
+If validation exists: error shown and account not created 
+
+Otherwise: no crash, value treated as text 
+
+Actual result: 
+
+System requires filling in zipcode field 
+
+  
+
+TC-AUTH-019 
+
+Module: Address Information 
+
+Technique: Negative / Format validation 
+
+Scenario: Mobile number contains letters 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Enter ABC-123 in mobile number 
+
+Fill other required fields valid 
+
+Click Create Account 
+
+Expected: 
+
+If validation exists: error shown and account not created 
+
+Otherwise: no crash, value treated as text 
+
+Actual result: 
+
+System allows to fill in the mobile number field with any character (e.g. letters instead of numbers, or special characters) 
+
+  
+
+TC-AUTH-020 
+
+Module: Address Information 
+
+Technique: Robustness 
+
+Scenario: Special characters in company and address 2 
+
+Preconditions: User is on Enter Account Information page 
+
+Priority: Low 
+
+Steps: 
+
+  
+
+Enter special characters in company and address 2 
+
+Fill other required fields valid 
+
+Click Create Account 
+
+Expected: 
+
+No crash or server error 
+
+Account creation succeeds or validation is shown (no HTML/SQL errors exposed) 
+
+Actual result: 
+
+System allows to fill in with any information the company and address 2 fields and doesn’t show any error 
+
+  
+
+TC-AUTH-021 
+
+Module: Registration flow 
+
+Technique: Positive 
+
+Scenario: Account created message appears and Continue works 
+
+Preconditions: Registration data is valid 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Complete registration and click Create Account 
+
+Verify account created confirmation 
+
+Click Continue 
+
+Expected: 
+
+Confirmation Account Created is shown 
+
+After Continue user is logged in and redirected to home 
+
+Actual result: 
+
+After creating account a verification page is opened “Account created!” and user is already logged in 
+
+  
+
+TC-AUTH-022 
+
+Module: Login 
+
+Technique: Positive 
+
+Scenario: Login with valid credentials 
+
+Preconditions: Account exists 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Enter registered email 
+
+Enter correct password 
+
+Click Login 
+
+Expected: 
+
+User is logged in 
+
+Logout is visible in header 
+
+Actual result: 
+
+After entering valid information user is logged in and the Logout is visible in header. 
+
+  
+
+TC-AUTH-023 
+
+Module: Login 
+
+Technique: Negative / Validation 
+
+Scenario: Login with empty email and empty password 
+
+Preconditions: None 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Leave email empty 
+
+Leave password empty 
+
+Click Login 
+
+Expected: 
+
+Form is not submitted and required validation is shown 
+
+Actual result: 
+
+System requires to fill out email and password fields 
+
+  
+
+TC-AUTH-024 
+
+Module: Login 
+
+Technique: Negative / Validation 
+
+Scenario: Login with empty password 
+
+Preconditions: None 
+
+Priority: Medium 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Enter a valid email 
+
+Leave password empty 
+
+Click Login 
+
+Expected: 
+
+Form is not submitted and required validation is shown 
+
+Actual result: 
+
+System requires to fill out password field 
+
+  
+
+TC-AUTH-025 
+
+Module: Login 
+
+Technique: Negative 
+
+Scenario: Login with unregistered email 
+
+Preconditions: Email is not registered 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Enter unregistered email 
+
+Enter any password 
+
+Click Login 
+
+Expected: 
+
+Login fails with generic invalid credentials message 
+
+Actual result: 
+
+An error message is shown “Your email or password is incorrect!” and system doesn’t allow to perceed with log in 
+
+  
+
+TC-AUTH-026 
+
+Module: Login 
+
+Technique: UI validation 
+
+Scenario: Password input is masked on login form 
+
+Preconditions: None 
+
+Priority: Low 
+
+Steps: 
+
+  
+
+Open Signup / Login page 
+
+Type into password input 
+
+Expected: 
+
+Password characters are masked 
+
+Actual result: 
+
+Password characters are masked with dots 
+
+  
+
+TC-AUTH-027 
+
+Module: Logout 
+
+Technique: Positive 
+
+Scenario: Logout ends session 
+
+Preconditions: User is logged in 
+
+Priority: High 
+
+Steps: 
+
+  
+
+Click Logout in header 
+
+Expected: 
+
+User is logged out 
+
+Redirect to Signup / Login page or home page 
+
+Logged in indicator disappears 
+
+Actual result: 
+
+After user is logged out, clicking on logout button in header redirects user to login page and logout button dissapears. 
+
+  
+
+TC-AUTH-028 
+
+Module: Session management 
+
+Technique: Positive 
+
+Scenario: Refresh page while logged in keeps user logged in 
+
+Preconditions: User is logged in 
+
+Priority: Low 
+
+Steps: 
+
+  
+
+Refresh the browser page 
+
+Expected: 
+
+User remains logged in 
+
+Logged in indicator remains visible 
+
+Actual result: 
+
+After several refreshes logout button is still visible and user is still logged in 
+
+ 
+
+ 
