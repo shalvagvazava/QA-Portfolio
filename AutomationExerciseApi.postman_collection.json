@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "3d2e6ee2-9bce-4ada-82e9-5fa2cc3bd1ba",
+		"name": "AutomationExerciseApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "41953000"
+	},
+	"item": [
+		{
+			"name": "API-01 GET Products List",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "API-02 GET Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Brands list exists\", function () {",
+							"  const body = pm.response.json();",
+							"  pm.expect(body).to.have.property(\"brands\");",
+							"  pm.expect(body.brands.length).to.be.above(0);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/brandsList"
+			},
+			"response": []
+		},
+		{
+			"name": "API-03 POST Search Product (Valid)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains products list\", function () {",
+							"  const body = pm.response.json();",
+							"  pm.expect(body).to.have.property(\"products\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "search_product",
+							"value": "{{searchTerm}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{baseUrl}}/api/searchProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "API-04 POST Verify Login (Valid)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response message confirms user exists\", function () {",
+							"  const body = pm.response.json();",
+							"  pm.expect(body).to.have.property(\"message\");",
+							"  pm.expect(body.message.toLowerCase()).to.include(\"user exists\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "{{validEmail}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{validPassword}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": ""
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"  pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test(\"Response is not empty\", function () {",
+					"  pm.expect(pm.response.text()).to.not.be.empty;",
+					"});",
+					"",
+					"pm.test(\"Response contains products\", function () {",
+					"  const body = pm.response.json();",
+					"  pm.expect(body).to.have.property(\"products\");",
+					"  pm.expect(body.products.length).to.be.above(0);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://automationexercise.com",
+			"type": "string"
+		},
+		{
+			"key": "validEmail",
+			"value": "shako_gvazava@yahoo.com",
+			"type": "string"
+		},
+		{
+			"key": "validPassword",
+			"value": "Shako2003",
+			"type": "string"
+		},
+		{
+			"key": "searchTerm",
+			"value": "top",
+			"type": "string"
+		}
+	]
+}
