@@ -1,0 +1,93 @@
+Test Summary Report AutomationExercise.com 
+
+1. Project Information 
+
+Application under test: https://automationexercise.com 
+
+Test type: Manual testing 
+
+Test level: System testing (UI) + basic validation/security checks 
+
+Module / Scope: Authentication and User Registration 
+
+Signup / Login page 
+
+Enter Account Information form 
+
+Address Information form 
+
+Login / Logout 
+
+Out of scope: 
+
+Full functional testing of Products, Cart, Checkout, Contact Us, etc. 
+
+Performance/load testing 
+
+Deep security testing (penetration testing) 
+
+2. Test Environment 
+
+OS: macOS Tahoe 26.2 
+
+Browser: Google Chrome Version 147.0.7727.102 (Official Build) (arm64) 
+
+Execution dates: 05.01.2026 
+
+Test data: 
+
+New user account created for testing: (e.g., user “shako”) 
+
+Unique emails used for signup scenarios: Yes 
+
+3. Entry / Exit Criteria 
+
+Entry criteria 
+
+Website is available and accessible 
+
+Signup / Login page opens 
+
+Test data (unique email) prepared 
+
+Exit criteria 
+
+All planned Authentication test cases executed or marked Blocked 
+
+Defects logged for all failed test cases 
+
+Results documented (Actual result + evidence) 
+
+4. Test Execution Summary 
+
+Total test cases planned (Auth suite): 29 
+
+Executed: 29 
+
+Passed: 25 
+
+Failed: 4 
+
+Blocked / Not executed: 0 
+
+5. Defects Summary (Logged) 
+
+BR-AUTH-001 — Registration allows 1-character password (Severity: Major, Priority: Medium) 
+
+BR-AUTH-002 — Mobile number field accepts letters/special characters (Severity: Major, Priority: Medium) 
+
+BR-AUTH-003 — Zipcode field accepts alphabetic characters (Severity: Minor/Medium, Priority: Low/Medium) 
+
+BR-AUTH-004 — Signup accepts invalid email formats / insufficient email validation (Severity: Major, Priority: Medium) 
+
+6. Risks / Observations 
+
+Weak input validation during account creation may impact data quality and account security. 
+
+Some validation rules may depend on business requirements (e.g., zipcode format by country); clarification is recommended. 
+
+7. Conclusion 
+
+Authentication module basic flows (signup initiation, registration form completion, login/logout) are functional. However, multiple validation/security related issues were identified and documented in defect reports. Further regression testing is recommended after fixes. 
+
+ 
