@@ -1,0 +1,225 @@
+Bug Report 1 
+
+Bug ID: BR-AUTH-001 
+
+Title/Summary: Registration allows creating an account with a 1-character password 
+
+Module/Area: Signup → Enter Account Information 
+
+URL: https://automationexercise.com/signup 
+
+Environment: macOS Tahoe 26.2, Chrome Version 147.0.7727.102 (Official Build) (arm64) 
+
+Severity: Major (Security / account protection risk) 
+
+Priority: Medium 
+
+Reproducibility: Always 
+
+  
+
+Preconditions: 
+
+  
+
+User has started signup from Signup / Login page and is on “Enter Account Information”. 
+
+Steps to reproduce: 
+
+  
+
+Open Signup / Login page. 
+
+Enter a name and a unique email address. 
+
+Click Signup. 
+
+On Enter Account Information page, enter a password consisting of 1 character. 
+
+Fill all mandatory Address Information fields with valid values. 
+
+Click Create Account. 
+
+Expected result: 
+
+  
+
+The system should enforce a minimum password length (commonly 6–8+ characters) and show a validation message, preventing account creation. 
+
+Actual result: 
+
+  
+
+The system allows a 1-character password and proceeds with account creation. 
+
+  
+
+Related test case: TC-AUTH-011 (your suite) 
+
+Notes: 
+
+  
+
+Even if requirements are not documented, allowing extremely short passwords is a common security weakness and typically treated as a defect or at least a security improvement. 
+
+Bug Report 2 
+
+Bug ID: BR-AUTH-002 
+
+Title/Summary: Mobile Number field accepts letters and special characters during registration 
+
+Module/Area: Signup → Address Information 
+
+URL: https://automationexercise.com/signup 
+
+Environment: macOS Tahoe 26.2, Chrome Version 147.0.7727.102 (Official Build) (arm64) 
+
+Severity: Major (Data integrity issue if account can be created with invalid phone) 
+
+Priority: Medium 
+
+Reproducibility: Always 
+
+  
+
+Preconditions: 
+
+  
+
+User is on “Enter Account Information” page during signup. 
+
+Steps to reproduce: 
+
+  
+
+Start signup with a unique email and open Enter Account Information page. 
+
+Fill all required fields with valid values. 
+
+In Mobile Number enter ABC-123 or !!!@@@. 
+
+Click Create Account. 
+
+Expected result: 
+
+  
+
+The system should validate the mobile number format and prevent submission with non-phone characters (allow only digits and optionally +, spaces, hyphens, parentheses). 
+
+Actual result: 
+
+  
+
+The system accepts letters and special characters in Mobile Number and does not show validation error. 
+
+Related test case: TC-AUTH-019 (your suite) 
+
+Notes: 
+
+If the application is intended to accept any text in this field (unlikely), then field should be labeled differently (e.g., “Contact information”) or validation rules should be clarified. 
+
+Bug Report 3 
+
+Bug ID: BR-AUTH-003 
+
+Title/Summary: Zipcode field accepts alphabetic characters (no format validation) 
+
+Module/Area: Signup → Address Information 
+
+URL: https://automationexercise.com/signup 
+
+Environment: macOS Tahoe 26.2, Chrome Version 147.0.7727.102 (Official Build) (arm64) 
+
+Severity: Minor to Major (depends on business rules; typically Minor/Medium) 
+
+Priority: Low/Medium 
+
+Reproducibility: Always 
+
+  
+
+Preconditions: 
+
+  
+
+User is on “Enter Account Information” page during signup. 
+
+Steps to reproduce: 
+
+  
+
+Start signup and open Enter Account Information page. 
+
+Fill all required fields with valid values. 
+
+In Zipcode enter ABCDE (letters only). 
+
+Click Create Account. 
+
+Expected result: 
+
+The system should validate the zipcode format according to selected country (commonly numeric; at least should reject pure letters where not applicable) OR clearly allow alphanumeric zipcodes based on country rules. 
+
+Actual result: 
+
+ The system accepts letters in Zipcode and does not show validation error.  
+
+Related test case: TC-AUTH-018 (your suite) 
+
+Notes: 
+
+ Some countries have alphanumeric postal codes, so proper expected behavior should be based on the selected country. If country is India (as in screenshot), typically numeric pincode is expected. 
+
+Bug Report 4 
+
+Bug ID: BR-AUTH-004 
+
+Title/Summary: Signup accepts invalid email formats (email validation missing/insufficient) 
+
+Module/Area: Signup → New User Signup / Enter Account Information 
+
+URL: https://automationexercise.com/login (signup start), https://automationexercise.com/signup 
+
+Environment: macOS Tahoe 26.2, Chrome Version 147.0.7727.102 (Official Build) (arm64)= 
+
+Severity: Major (Data integrity; account communication issues) 
+
+Priority: Medium 
+
+Reproducibility: Always 
+
+  
+
+Preconditions: 
+
+User is on Signup / Login page. 
+
+Steps to reproduce (format validation case): 
+
+ Open Signup / Login page. 
+
+Enter a name. 
+
+Enter an invalid email such as: 
+
+abc 
+
+abc@ 
+
+@gmail.com 
+
+abc@gmail 
+
+Click Signup. 
+
+Expected result: 
+
+ The system should reject invalid email formats and show a validation message. User should not proceed to the next step. 
+
+Actual result: 
+
+  
+
+The system allows the user to proceed without showing an email format validation error. 
+
+ 
